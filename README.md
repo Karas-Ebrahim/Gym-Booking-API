@@ -12,7 +12,7 @@ The API also handles authentication, authorization, validation, class capacity, 
 
 ## Group Members & Roles
 
-### Karas Ibrahim
+### Karas Ebrahim
 
 **Authentication, Authorization & Integration**
 
