@@ -153,57 +153,53 @@ Booking {
 
 
 
-# 📁 Project Structure Without Explaining
+# 📁 Project Structure With Explaining
 
-gym-booking-api/ 
+```text
+gym-booking-api/
+│
 ├── src/
 │   │
 │   ├── config/
-│   │   ├── db.ts
-│   │   └── swagger.ts
+│   │   ├── db.ts - مسؤول عن MongoDB و الاتصال بال Database
+│   │   └── swagger.ts - ال UI
 │   │
-│   ├── models/
-│   │   ├── user.model.ts
-│   │   ├── classSession.model.ts
-│   │   └── booking.model.ts
+│   ├── models/ - ال Schemas
+│   │   ├── user.model.ts - User Schema.
+│   │   ├── classSession.model.ts - ClassSession Schema.
+│   │   └── booking.model.ts - Booking Schema
 │   │
-│   ├── controllers/
-│   │   ├── auth.controller.ts
-│   │   ├── classSession.controller.ts
-│   │   └── booking.controller.ts
+│   ├── controllers/ - ال Logic كله
+│   │   ├── auth.controller.ts - ال Login() و ال Register()
+│   │   ├── classSession.controller.ts - فيه CreateClass() , GetClass() , DeleteClass() , UpdataClass() و هكذا
+│   │   └── booking.controller.ts - فيه CreateBooking() , CancelBooking() , GetMyBookings()
 │   │
-│   ├── routes/
-│   │   ├── auth.routes.ts
-│   │   ├── classSession.routes.ts
-│   │   └── booking.routes.ts
+│   ├── routes/ - الربط بالسيرفر
+│   │   ├── auth.routes.ts - POST /api/auth/register و POST /api/auth/login
+│   │   ├── classSession.routes.ts - GET /api/classes و GET /api/classes/:id و POST /api/classes و PATCH /api/classes/:id و DELETE /api/classes/:id و هكذا
+│   │   └── booking.routes.ts - POST /api/bookings و GET /api/bookings/me و PATCH /api/bookings/:id/cancel
 │   │
 │   ├── middleware/
-│   │   ├── auth.middleware.ts
-│   │   ├── role.middleware.ts
-│   │   
-│   │   
+│   │   ├── auth.middleware.ts - Authorization وال Token
+│   │   ├── role.middleware.ts - يحدد مين مسموح له
 │   │
-│   ├── validators/
+│   ├── validators/ - هنا التحقق من الـ input
 │   │   ├── auth.validator.ts
 │   │   ├── classSession.validator.ts
 │   │   └── booking.validator.ts
 │   │
 │   ├── utils/
-│   │   ├── jwt.ts
-│   │   └── password.ts
+│   │   ├── jwt.ts - Verify Token , Generate Token
+│   │   └── password.ts - ال Hash و ال ComparePaswword
 │   │
-│    |
-│   │   
-│   │
-│   └── server.ts
+│   └── server.ts - إللي هنشغل منه السيرفر بتاعنا
 │
-├── .env
+├── .env - الباسووردز و عنوان ال داتا بيز
 ├── .env.example
 ├── .gitignore
 ├── package.json
 ├── tsconfig.json
 └── README.md
-
-
+```
 
 
