@@ -196,7 +196,7 @@ gym-booking-api/
 │   │   ├── jwt.ts
 │   │   └── password.ts
 │   │
-│    |
+│   |
 │   │   
 │   │
 │   └── server.ts
