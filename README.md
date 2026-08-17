@@ -153,6 +153,66 @@ Booking {
 
 
 
+
+
+# 📁 Project Structure Without Explaining
+
+```text
+gym-booking-api/    
+│
+├── src/
+│   │
+│   ├── config/
+│   │   ├── db.ts
+│   │   └── swagger.ts
+│   │
+│   ├── models/
+│   │   ├── user.model.ts
+│   │   ├── classSession.model.ts
+│   │   └── booking.model.ts
+│   │
+│   ├── controllers/
+│   │   ├── auth.controller.ts
+│   │   ├── classSession.controller.ts
+│   │   └── booking.controller.ts
+│   │
+│   ├── routes/
+│   │   ├── auth.routes.ts
+│   │   ├── classSession.routes.ts
+│   │   └── booking.routes.ts
+│   │
+│   ├── middleware/
+│   │   ├── auth.middleware.ts
+│   │   ├── role.middleware.ts
+│   │   
+│   │   
+│   │
+│   ├── validators/
+│   │   ├── auth.validator.ts
+│   │   ├── classSession.validator.ts
+│   │   └── booking.validator.ts
+│   │
+│   ├── utils/
+│   │   ├── jwt.ts
+│   │   └── password.ts
+│   │
+│    |
+│   │   
+│   │
+│   └── server.ts
+│
+├── .env
+├── .env.example
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+
+
+
+
 # 📁 Project Structure With Explaining
 
 ```text
