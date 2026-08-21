@@ -1,11 +1,22 @@
 import { Request, Response, NextFunction } from "express";
 
-export const validateBooking=(req:Request ,res:Response ,next:NextFunction)=>{
-  const { session } = req.body;
+import mongoose from "mongoose";
 
-  if(!session){
-    return res.status(400).json({message:"Session ID is required to make a booking."});
-  }
-  
-  next();
-};
+export const validateBooking = ( req: Request,res: Response, next: NextFunction) => {
+    const { session } = req.body
+
+    if (!session) {
+        return res.status(400).json({
+            message: "Session ID is required to make a booking."
+        })
+    }
+
+    if (!mongoose.isValidObjectId(session)) {
+        return res.status(400).json({
+            message: "Invalid session ID."
+        })
+    }
+
+    next()
+}
+
