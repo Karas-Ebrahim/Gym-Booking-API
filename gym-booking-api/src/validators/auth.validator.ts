@@ -8,14 +8,19 @@ export const validateRegister=(req:Request ,res:Response ,next:NextFunction)=>{
   if(!fullName){
     errors.push("Full name is required.");
   }
-  if(!email){
-    errors.push("Email is required.");
-  }
   if(!password){
     errors.push("Password is required.");
   }
   if(!role){
     errors.push("Role is required.");
+  }
+  if(!email){
+    errors.push("Email is required.");
+  }
+  else{
+    if(!email.includes("@")||!email.includes(".")){
+      errors.push("Invalid email format. Must contain '@' and '.'");
+    }
   }
   if(password&&password.length<6){
     errors.push("Password must be at least 6 characters long.");
